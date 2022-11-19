@@ -1,13 +1,13 @@
 def fat(x, z, w):
-    if x == 1:
-        return x
-    else:
-        z += x
-        if z != x:
-            z -= x
-        y = z * (x - 1)
-        w += y
+    z -= 1
+    y = x-1
+    if z == y:
+        w = x * z
+        z -= 1
+    if z <= 1:
         print(w)
-        fat(x - 1, x, 0)
+    else:
+        w = w * z
+        fat(x, z, w)
 
-fat(4, 4, 0)
+fat(7, 7, 0)
